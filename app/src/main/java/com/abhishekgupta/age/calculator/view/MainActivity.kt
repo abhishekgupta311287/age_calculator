@@ -1,7 +1,8 @@
-package com.abhishekgupta.age.calculator
+package com.abhishekgupta.age.calculator.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.abhishekgupta.age.calculator.R
 import com.abhishekgupta.age.calculator.view.profile.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
