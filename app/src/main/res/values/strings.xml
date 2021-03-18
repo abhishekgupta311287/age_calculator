@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">App</string>
+    <string name="hint_first_name">Enter First Name</string>
+    <string name="hint_last_name">Enter Last Name</string>
+    <string name="hint_dob">Select Date of Birth</string>
+    <string name="date_format">%d-%d-%d</string>
+
 </resources>

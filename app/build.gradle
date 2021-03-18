@@ -7,7 +7,7 @@ android {
     compileSdkVersion build_versions.target_sdk
 
     defaultConfig {
-        applicationId "com.abhishekgupta.stocks"
+        applicationId "com.abhishekgupta.age.calculator"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode build_versions.version_code
