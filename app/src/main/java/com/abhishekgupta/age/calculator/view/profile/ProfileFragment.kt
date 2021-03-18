@@ -1,7 +1,7 @@
-package com.abhishekgupta.age.calculator.ui.profile
+package com.abhishekgupta.age.calculator.view.profile
 
+import android.app.DatePickerDialog
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.abhishekgupta.age.calculator.R
 import com.abhishekgupta.age.calculator.databinding.ProfileFragmentBinding
+import com.abhishekgupta.age.calculator.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.profile_fragment.*
 import java.util.*
 
@@ -16,13 +17,9 @@ class ProfileFragment : Fragment() {
 
     companion object {
         fun newInstance() = ProfileFragment()
-
-        const val HANDLER_DELAY = 2000L
     }
 
     private lateinit var viewModel: MainViewModel
-    private val handler = Handler()
-    private var runnable: Runnable? = null
     private var _binding: ProfileFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -45,23 +42,16 @@ class ProfileFragment : Fragment() {
             val currentMonth = today.get(Calendar.MONTH)
             val currentYear = today.get(Calendar.YEAR)
 
-            binding.datePicker.init(
+            DatePickerDialog(
+                requireContext(),
+                { _, year, month, day ->
+                    binding.dob.text = getString(R.string.date_format, day, month + 1, year)
+                },
                 currentYear,
                 currentMonth,
                 currentDay
-            ) { view, year, month, day ->
+            ).show()
 
-                runnable?.let {
-                    handler.removeCallbacks(it)
-                }
-                runnable = Runnable {
-                    binding.dob.text = getString(R.string.date_format, day, month, year)
-                    binding.datePicker.visibility = View.INVISIBLE
-                }
-                handler.postDelayed(runnable!!, HANDLER_DELAY)
-
-            }
-            binding.datePicker.visibility = View.VISIBLE
         }
 
         nextButton.setOnClickListener {

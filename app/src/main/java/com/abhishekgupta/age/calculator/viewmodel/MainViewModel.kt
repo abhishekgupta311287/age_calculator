@@ -1,4 +1,4 @@
-package com.abhishekgupta.age.calculator.ui.profile
+package com.abhishekgupta.age.calculator.viewmodel
 
 import androidx.lifecycle.ViewModel
 

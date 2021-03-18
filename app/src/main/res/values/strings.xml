@@ -4,5 +4,6 @@
     <string name="hint_last_name">Enter Last Name</string>
     <string name="hint_dob">Select Date of Birth</string>
     <string name="date_format">%d-%d-%d</string>
+    <string name="next">Next</string>
 
 </resources>
