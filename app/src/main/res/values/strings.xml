@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App</string>
+    <string name="app_name">Age Calculator</string>
     <string name="hint_first_name">Enter First Name</string>
     <string name="hint_last_name">Enter Last Name</string>
     <string name="hint_dob">Select Date of Birth</string>
