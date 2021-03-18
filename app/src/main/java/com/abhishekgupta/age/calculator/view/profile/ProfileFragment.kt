@@ -40,7 +40,7 @@ class ProfileFragment : Fragment() {
             val currentMonth = today.get(Calendar.MONTH)
             val currentYear = today.get(Calendar.YEAR)
 
-            DatePickerDialog(
+            val datePickerDialog = DatePickerDialog(
                 requireContext(),
                 { _, year, month, day ->
                     binding.dob.text = getString(R.string.date_format, day, month + 1, year)
@@ -48,7 +48,9 @@ class ProfileFragment : Fragment() {
                 currentYear,
                 currentMonth,
                 currentDay
-            ).show()
+            )
+            datePickerDialog.datePicker.maxDate = today.timeInMillis
+            datePickerDialog.show()
 
         }
 
