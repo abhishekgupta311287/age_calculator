@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import com.abhishekgupta.age.calculator.R
 import com.abhishekgupta.age.calculator.databinding.ProfileFragmentBinding
 import com.abhishekgupta.age.calculator.viewmodel.MainViewModel
-import kotlinx.android.synthetic.main.profile_fragment.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.util.*
 
@@ -53,7 +52,7 @@ class ProfileFragment : Fragment() {
 
         }
 
-        nextButton.setOnClickListener {
+        binding.nextButton.setOnClickListener {
             val firstName = binding.firstName.text.toString()
             val lastName = binding.lastName.text.toString()
             val dob = binding.dob.text.toString()
@@ -71,12 +70,20 @@ class ProfileFragment : Fragment() {
     private fun isValidInput(firstName: String, lastName: String, dob: String) =
         when {
             firstName.isEmpty() -> {
-                Toast.makeText(requireContext(), getString(R.string.hint_first_name), Toast.LENGTH_LONG)
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.hint_first_name),
+                    Toast.LENGTH_LONG
+                )
                     .show()
                 false
             }
             lastName.isEmpty() -> {
-                Toast.makeText(requireContext(), getString(R.string.hint_last_name), Toast.LENGTH_LONG)
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.hint_last_name),
+                    Toast.LENGTH_LONG
+                )
                     .show()
                 false
             }
