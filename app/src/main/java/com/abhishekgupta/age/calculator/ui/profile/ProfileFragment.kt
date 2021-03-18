@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.abhishekgupta.age.calculator.R
 import com.abhishekgupta.age.calculator.databinding.ProfileFragmentBinding
+import kotlinx.android.synthetic.main.profile_fragment.*
 import java.util.*
 
 class ProfileFragment : Fragment() {
@@ -61,6 +62,10 @@ class ProfileFragment : Fragment() {
 
             }
             binding.datePicker.visibility = View.VISIBLE
+        }
+
+        nextButton.setOnClickListener {
+
         }
     }
 
